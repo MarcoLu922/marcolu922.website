@@ -28,66 +28,27 @@
 5. [功能说明](#功能说明)
 6. [模型微调](#模型微调)
 7. [部署与测试](#部署与测试)
-8. [开发者指南](#开发者指南)
-9. [许可证](#许可证)
 
 ---
 
 ## 后端项目结构
 
 ```bash
-Back-end/
-├── src/                        # 源代码目录
-│   ├── app/                    # 应用核心逻辑
-│   │   ├── __init__.py         # 应用初始化（加载配置、注册模块等）
-│   │   ├── config.py           # 全局配置文件
-│   │   ├── controllers/        # 控制器层（API层）
-│   │   │   ├── __init__.py     
-│   │   │   ├── auth_controller.py         # 用户管理相关API
-│   │   │   ├── conversation_controller.py # 对话相关API
-│   │   │   └── knowledge_controller.py    # 知识库管理API
-│   │   ├── services/           # 服务层（业务逻辑）
-│   │   │   ├── __init__.py
-│   │   │   ├── auth_service.py           # 用户管理业务逻辑
-│   │   │   ├── conversation_service.py   # 对话业务逻辑
-│   │   │   └── knowledge_service.py      # 知识库业务逻辑
-│   │   ├── repositories/       # 数据访问层（数据库交互）
-│   │   │   ├── __init__.py
-│   │   │   ├── user_repository.py        # 用户数据操作
-│   │   │   ├── conversation_repository.py # 会话数据操作
-│   │   │   └── knowledge_repository.py   # 知识库数据操作
-│   │   ├── models/             # 数据模型
-│   │   │   ├── __init__.py
-│   │   │   ├── user.py                    # 用户模型
-│   │   │   ├── conversation.py            # 会话模型
-│   │   │   └── knowledge.py               # 知识库模型
-│   │   ├── middlewares/        # 中间件
-│   │   │   ├── __init__.py
-│   │   │   ├── auth_middleware.py        # 用户认证中间件
-│   │   │   └── logging_middleware.py     # 请求日志记录中间件
-│   │   ├── utils/              # 工具库
-│   │   │   ├── __init__.py
-│   │   │   ├── logger.py                 # 日志工具
-│   │   │   ├── tokenizer.py              # 文本预处理工具
-│   │   │   └── response_helper.py        # 响应格式化工具
-│   │   ├── static/             # 静态资源（上传文件、模板等）
-│   │   └── templates/          # 前端模板（如需支持服务端渲染）
-├── tests/                      # 测试代码目录
-│   ├── unit/                   # 单元测试
-│   ├── integration/            # 集成测试
-│   └── test_config.py          # 测试配置
-├── migrations/                 # 数据库迁移脚本
-├── scripts/                    # 运维脚本（如部署、定时任务）
-├── docs/                       # 项目文档
-├── requirements.txt            # 依赖包
-├── Dockerfile                  # Docker容器配置
-├── docker-compose.yml          # 多服务容器配置
-└── run.py                      # 项目启动脚本
+
 ```
 ### 目录结构说明
 
 ## 环境要求
 
-1. **操作系统**：Linux/macOS/Windows
+1. **操作系统**：Windows
 2. **Python版本**：3.8及以上
 3. **依赖库**：
+
+### 编程语言
+Python: 开发基于大模型 Agent 的智能客服系统的主要语言。它支持丰富的机器学习框架（如 TensorFlow、PyTorch、Transformers）以及自然语言处理工具（如 NLTK、spaCy），能够高效地与大模型进行交互和训练。
+### 后端技术框架
+Django / Flask (Python): Django 是一个高级的 Python Web 框架，适用于快速开发 RESTful API 和管理后台，Flask 则是轻量级框架，适合小型项目和微服务架构。
+### 数据库
+PostgreSQL（结构化数据）和 Redis（缓存）
+### API与服务
+OpenAI API 或自建大模型服务
